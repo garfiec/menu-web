@@ -1,0 +1,26 @@
+import {
+    LOCAL_STORAGE_COMPLETED_FIRST_SETUP,
+    LOCAL_STORAGE_ENHANCEMENT_PREFERENCES,
+    LOCAL_STORAGE_MENU_API_KEY,
+    LOCAL_STORAGE_OCR_LANGUAGES,
+    LOCAL_STORAGE_TRANSLATION_LANGUAGE,
+    SETTINGS_DEFAULT_ENHANCEMENT_PREFERENCES, SETTINGS_DEFAULT_OCR_LANGUAGES,
+    SETTINGS_DEFAULT_TRANSLATION_LANGUAGE
+} from "@/utils/constants";
+
+function initializeAppSettings() {
+    if (localStorage.getItem(LOCAL_STORAGE_COMPLETED_FIRST_SETUP) === null) {
+        localStorage.setItem(LOCAL_STORAGE_COMPLETED_FIRST_SETUP, 'true');
+
+        // Provide initial settings for the user
+        if (localStorage.getItem(LOCAL_STORAGE_MENU_API_KEY) === null) {
+            localStorage.setItem(LOCAL_STORAGE_MENU_API_KEY, '');
+        }
+
+        localStorage.setItem(LOCAL_STORAGE_OCR_LANGUAGES, SETTINGS_DEFAULT_OCR_LANGUAGES);
+        localStorage.setItem(LOCAL_STORAGE_ENHANCEMENT_PREFERENCES, SETTINGS_DEFAULT_ENHANCEMENT_PREFERENCES);
+        localStorage.setItem(LOCAL_STORAGE_TRANSLATION_LANGUAGE, SETTINGS_DEFAULT_TRANSLATION_LANGUAGE);
+    }
+}
+
+export {initializeAppSettings};

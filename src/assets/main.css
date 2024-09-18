@@ -1,0 +1,38 @@
+@import './base.css';
+
+body {
+  background-color: #fbfbfb;
+}
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  background-color: #fbfbfb;
+}
+
+.main-container {
+  width: 75%;
+}
+
+@media (min-width: 1024px) {
+  body {
+    place-items: center;
+  }
+
+  #app {
+    margin: 0 auto;
+    font-weight: normal;
+  }
+}
+
+/*
+Mobile devices
+*/
+@media (max-width: 1024px) {
+  #app {
+  }
+
+  .main-container {
+    width: 100%!important;
+  }
+}
